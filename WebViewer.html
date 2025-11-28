@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+
+        </head>
+    <body>
+        <video id = "webcam" width="320" height="240" playsinline autoplay></video>
+        <script>
+            
+
+            window.onload = function () {
+                navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
+                    .then(stream => {
+                        document.getElementById("webcam").srcObject = stream;
+                    })
+                    .catch(err => alert(err));
+            }
+            
+        </script>
+    </body>
+</html>
